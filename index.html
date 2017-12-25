@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Gllacy</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<input type="radio" name="toggle-slide" id="slide1">
-	<input type="radio" name="toggle-slide" id="slide2">
-	<input type="radio" name="toggle-slide" id="slide3">
+	<input type="radio" name="toggle-slide" id="slide1" class="display-none">
+	<input type="radio" name="toggle-slide" id="slide2" class="display-none">
+	<input type="radio" name="toggle-slide" id="slide3" class="display-none">
 
 	<div class="site-wrapper">
 		<div class="content-wrapper">
@@ -37,9 +38,9 @@
 				</nav>
 
 				<div class="search-block">
-					<div class="search-img">
-						<img src="" alt="Search">
-					</div>
+					<button type="button" class="search-button">
+						Поиск
+					</button>
 
 					<form class="search-form display-none">
 						<input type="text" name="search" placeholder="Что ищем?">

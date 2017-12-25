@@ -15,6 +15,189 @@ body{
 	margin: 0 auto;
 }
 
+.display-none{
+	display: none;
+}
+
+/* HEADER */
+
+.main-header{
+	display: flex;
+	margin-top: 9px;
+}
+
+.logo{
+	width: 160px;
+}
+
+.main-navigation{
+	margin-top: 21px;
+	margin-right: auto;
+
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li{
+		display: inline-block;
+		vertical-align: top;
+
+		&:first-child{
+			margin-left: 5px;
+		}
+	}
+
+	a{
+		padding-top: 6px;
+		padding-bottom: 8px;
+		padding-left: 13px;
+		padding-right: 13px;
+
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 700;
+		text-decoration: none;
+		color: #fff;
+
+		&:hover{
+			color: #333;
+			background-color: #f7f6f3;
+			border-radius: 40px;
+		}
+	}
+}
+
+.search-block{
+	margin-top: 14px;
+}
+
+.search-button{
+	font-size: 0;
+
+	width: 32px;
+	height: 32px;
+	border: none;
+	border-radius: 50%;
+
+	background-color: #a1b5aa;
+
+	position: relative;
+
+	&:hover{
+		cursor: pointer;
+		background-color: #f8f7f4;
+
+		&::after{
+			background-position: 0 -32px;
+		}
+	}
+
+	&::after{
+		content: "";
+		position: absolute;
+		top: 8px;
+		left: 8px;
+
+		width: 17px;
+		height: 17px;
+
+		background-image: url("../img/spritesheet.png");
+		background-repeat: no-repeat;
+	}
+}
+
+.user-block{
+	margin-left: 10px;
+	margin-top: 14px;
+
+	.login-link{
+		display: inline-block;
+		vertical-align: top;
+
+		font-family: 'Roboto', 'Arial', sans-serif;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #fff;
+		text-decoration: none;
+
+		padding-top: 8px;
+		padding-left: 44px;
+		padding-bottom: 8px;
+		padding-right: 16px;
+
+		background-color: #a1b5aa;
+		border-radius: 40px;
+
+		position: relative;
+
+		&:hover{
+			background-color: #f8f7f4;
+			color: #323232;
+
+			&::after{
+					background-position: 0 -98px;
+			}
+		}
+
+		&::after{
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 16px;
+
+			width: 21px;
+			height: 19px;
+
+			background-image: url("../img/spritesheet.png");
+			background-repeat: no-repeat;
+			background-position: 0 -64px;
+		}
+	}
+}
+
+.cart{
+	margin-left: 10px;
+	margin-top: 14px;
+
+	&-link{
+		display: inline-block;
+		vertical-align: top;
+
+		font-family: 'Roboto', 'Arial', sans-serif;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #fff;
+		text-decoration: none;
+
+		padding-top: 8px;
+		padding-left: 45px;
+		padding-bottom: 8px;
+		padding-right: 34px;
+
+		background-color: #a1b5aa;
+		border-radius: 40px;
+
+		position: relative;
+
+		&::after{
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 16px;
+
+			width: 21px;
+			height: 20px;
+
+			background-image: url("../img/spritesheet.png");
+			background-repeat: no-repeat;
+			background-position: 0 -132px;
+		}
+	}
+}
 
 //map
 .map-layer{
