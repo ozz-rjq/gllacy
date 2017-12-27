@@ -47,14 +47,19 @@ body{
 	&-item{
 		display: inline-block;
 		vertical-align: top;
-
+		
 		&:first-child{
 			margin-left: 5px;
 		}
 
 		> a{
-			padding-top: 6px;
-			padding-bottom: 8px;
+			position: relative;
+
+			display: inline-block;
+			vertical-align: top;
+
+			padding-top: 7px;
+			padding-bottom: 7px;
 			padding-left: 13px;
 			padding-right: 13px;
 
@@ -68,10 +73,25 @@ body{
 				color: #333;
 				background-color: #f7f6f3;
 				border-radius: 40px;
+
+				&::after{
+					opacity: 0;
+				}
 			}
 
 			&:active{
 				box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 1); 
+			}
+
+			&::after{
+				content: "";
+				position: absolute;
+				top: 24px;
+				left: 13px;
+				right: 13px;
+
+				height: 1px;
+				background-color: #9fb3a8;
 			}
 		}
 	}
