@@ -43,19 +43,29 @@
 					</button>
 
 					<form class="search-form">
-						<input type="text" name="search" placeholder="Что ищем?">
+						<div class="wrap">
+							<input type="text" name="search" class="search-input" placeholder="Что ищем?">
+							<label>Что ищем?</label>
+						</div>
 					</form>
 				</div>
 
 				<div class="user-block">
 					<a href="#" class="login-link">Вход</a>
 
-					<form class="login-form display-none">
-						<input type="email" name="email" placeholder="Электронная почта" class="login-input">
-						<input type="password" name="password" placeholder="Пароль" class="login-input">
+					<form class="login-form">
+						<div class="wrap">
+							<input type="email" name="email" placeholder="Электронная почта" class="login-input">
+							<label>Электронная почта</label>
+						</div>
+						
+						<div class="wrap">
+							<input type="password" name="password" placeholder="Пароль" class="login-input">
+							<label>Пароль</label>
+						</div>
 
 						<div class="login-bottom">
-							<button type="submit" class="login-confirm">Войти</button>
+							<button type="submit" class="btn login-submit">Войти</button>
 
 							<div class="additional-links">
 								<a href="#">Забыли пароль?</a>

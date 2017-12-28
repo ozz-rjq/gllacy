@@ -24,6 +24,96 @@ body{
 	display: none;
 }
 
+//placeholder styles
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #999;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #999;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+//GENERAL STYLES
+
+.wrap{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+input{
+	box-sizing: border-box;
+	padding-left: 14px;
+	padding-right: 14px;
+
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+	color: #323232;
+
+	border: 1px solid #d3d3d2;
+	border-radius: 4px;
+
+	&:focus{
+		border-color: #8fbdec;
+	}
+}
+
+.btn{
+	box-sizing: border-box;
+	min-width: 100px;
+	min-height: 45px;
+
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	text-align: center;
+	color: #fff;
+
+	background: linear-gradient(to bottom, #e74a35, #f26843);
+
+	border: none;
+	border-radius: 100px;
+	box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 1); 
+
+	&:hover{
+		cursor: pointer;
+		
+		background: linear-gradient(to bottom, #f58669, #ec6f5e);
+		box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 1); 
+	}
+
+	&:active{
+		background: linear-gradient(to bottom, #d74632, #e1613e);
+		box-shadow: inset 0px 2px 2px 0px rgba(148,39,24, 1); 
+	}
+}
+
 /* HEADER */
 
 .main-header{
@@ -32,6 +122,23 @@ body{
 	display: flex;
 	margin-top: 9px;
 	padding-top: 14px;
+
+	input + label{
+		display: none;
+	}
+
+	input:focus + label{
+		display: inline-block;
+		vertical-align: top;
+
+		position: absolute;
+		top: -16px;
+		left: 12px;
+
+		font-size: 11px;
+		line-height: 13px;
+		color: #5b9ddf;
+	}
 }
 
 .logo{
@@ -106,6 +213,8 @@ body{
 }
 
 .auxiliary-navigation{
+	display: none; //temporarily
+
 	position: absolute;
 	top: 37px;
 	left: 0px;
@@ -184,6 +293,7 @@ body{
 .search{
 
 	&-block{
+		display: none; //temporarily
 		position: relative;
 	}
 
@@ -239,26 +349,16 @@ body{
 		background-color: @standart-bg;
 		border-radius: 4px;
 
-		input{
-			box-sizing: border-box;
+		.search-input{
 			width: 100%;
 			height: 100%;
-			padding-left: 14px;
-			padding-right: 14px;
-
-			font-size: 14px;
-			line-height: 24px;
-			color: #999;
-
-			border: 1px solid #d3d3d2;
-			border-radius: 4px;
 		}
 	}
 }
 
-
-
 .user-block{
+	position: relative;
+
 	margin-left: 10px;
 
 	.login-link{
@@ -287,8 +387,12 @@ body{
 			color: #323232;
 
 			&::after{
-					background-position: 0 -98px;
+				background-position: 0 -98px;
 			}
+		}
+
+		&:active{
+			color: rgba(50,50,50,0.1);
 		}
 
 		&::after{
@@ -303,6 +407,58 @@ body{
 			background-image: url("../img/spritesheet.png");
 			background-repeat: no-repeat;
 			background-position: 0 -64px;
+		}
+	}
+
+	.login-form{
+		display: none; //temporarily
+		
+		position: absolute;
+		top: 36px;
+		left: -165px;
+		z-index: 10;
+
+		box-sizing: border-box;
+		width: 277px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 19px;
+		padding-right: 17px;
+
+		background-color: @standart-bg;
+		border-radius: 5px;
+	}
+
+	.login-input{
+		box-sizing: border-box;
+		width: 241px;
+		height: 44px;
+
+		margin-bottom: 20px;
+	}
+
+	.login-bottom{
+		display: flex;
+	}
+
+	.login-submit{
+		width: 100px;
+		height: 45px;
+	}
+
+	a{
+		display: inline-block;
+		vertical-align: top;
+
+		margin-left: 20px;
+
+		font-size: 13px;
+		line-height: 24px;
+		text-decoration: underline;
+		color: #323232;
+
+		&:hover{
+			text-decoration: none;
 		}
 	}
 }
@@ -353,6 +509,7 @@ body{
 	position: absolute;
 	top: 64px;
 	right: 0;
+	z-index: 5;
 
 	b{
 		display: block;
