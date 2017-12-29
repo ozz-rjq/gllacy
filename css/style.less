@@ -95,10 +95,10 @@ input{
 	text-align: center;
 	color: #fff;
 
-	background: linear-gradient(to bottom, #e74a35, #f26843);
+	background: linear-gradient(to bottom, #f26843, #e74a35);
 
 	border: none;
-	border-radius: 100px;
+	border-radius: 20px;
 	box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 1); 
 
 	&:hover{
@@ -248,8 +248,8 @@ input{
 
 			box-sizing: border-box;
 			width: 100%; 
-			padding-top: 6px;
-			padding-bottom: 6px;
+			padding-top: 8px;
+			padding-bottom: 7px;
 			padding-left: 20px;
 
 			font-size: 14px;
@@ -293,7 +293,6 @@ input{
 .search{
 
 	&-block{
-		display: none; //temporarily
 		position: relative;
 	}
 
@@ -333,6 +332,8 @@ input{
 	}
 
 	&-form{
+		display: none; //temporarily
+
 		position: absolute;
 		top: 36px;
 		left: -310px;
@@ -415,7 +416,7 @@ input{
 		
 		position: absolute;
 		top: 36px;
-		left: -165px;
+		left: -183px;
 		z-index: 10;
 
 		box-sizing: border-box;
@@ -427,6 +428,22 @@ input{
 
 		background-color: @standart-bg;
 		border-radius: 5px;
+
+		&-link{
+			display: inline-block;
+			vertical-align: top;
+
+			margin-left: 20px;
+
+			font-size: 13px;
+			line-height: 20px;
+			text-decoration: underline;
+			color: #323232;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
 	}
 
 	.login-input{
@@ -444,22 +461,6 @@ input{
 	.login-submit{
 		width: 100px;
 		height: 45px;
-	}
-
-	a{
-		display: inline-block;
-		vertical-align: top;
-
-		margin-left: 20px;
-
-		font-size: 13px;
-		line-height: 24px;
-		text-decoration: underline;
-		color: #323232;
-
-		&:hover{
-			text-decoration: none;
-		}
 	}
 }
 
