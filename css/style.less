@@ -11,6 +11,14 @@ body{
 
 .site-wrapper{
 	min-width: 1200px;
+
+	background-color: #849d8f;
+	background-image: url("../img/ice-creams-1.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+
+	transition: background-color 0.6s,
+							background-image 0.5s;
 }
 
 .content-wrapper{
@@ -95,6 +103,7 @@ input[type=password]{
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
+	text-decoration: none;
 	text-align: center;
 	color: #fff;
 
@@ -117,14 +126,15 @@ input[type=password]{
 	}
 }
 
+/**************************************************/
+
 /* HEADER */
 
 .main-header{
 	position: relative;
 
 	display: flex;
-	margin-top: 9px;
-	padding-top: 14px;
+	padding-top: 23px;
 
 	input + label{
 		display: none;
@@ -145,7 +155,7 @@ input[type=password]{
 }
 
 .logo{
-	margin-top: -14px;
+	margin-top: -13px;
 	width: 160px;
 }
 
@@ -511,7 +521,7 @@ input[type=password]{
 
 .order-time{
 	position: absolute;
-	top: 64px;
+	top: 72px;
 	right: 0;
 	z-index: 5;
 
@@ -530,6 +540,139 @@ input[type=password]{
 		margin-top: 4px;
 	}
 }
+
+/**************************************************/
+
+/*  SLIDER  */
+
+.slider{
+	position: relative;
+
+	box-sizing: border-box;
+	height: 570px;
+	padding-top: 316px;
+
+	&-controls{
+		position: absolute;
+		bottom: 63px;
+		z-index: 25;
+
+		label{
+			display: inline-block;
+			vertical-align: top;
+
+			box-sizing: border-box;
+			width: 21px;
+			height: 21px;
+			margin-right: 4px;
+
+			border: 2px solid #fff;
+			border-radius: 100%;
+
+			transition: background-color 0.75s;
+
+			&:hover{
+				cursor: pointer;
+
+				background-color: rgba(255,255,255,0.6);
+			}
+		}
+	}
+}
+
+.slide{
+	display: none;
+
+	position: absolute;
+	left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+
+	
+	text-align: center;
+
+	&-text{
+		margin: 0 auto;
+
+		width: 670px;
+		margin-bottom: 30px;
+
+		font-size: 60px;
+		line-height: 60px;
+		font-weight: 700;
+		text-align: center;
+		color: #fff;
+	}
+
+	&-btn{
+		display: inline-block;
+		vertical-align: top;
+
+		width: 278px;
+		height: 64px;
+
+		font-size: 32px;
+		line-height: 64px;
+
+		border-radius: 30px;
+	}
+}
+
+.slide:nth-child(3){
+	.slide-text{
+			width: 640px;
+	}
+}
+
+
+#slide1:checked ~ .site-wrapper{
+	background-color: #849d8f;
+	background-image: url("../img/ice-creams-1.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#slide1:checked ~ .site-wrapper .slide:nth-child(1){
+	display: block;
+}
+
+#slide1:checked ~ .site-wrapper label[for=slide1]{
+	background-color: #fff;
+}
+
+#slide2:checked ~ .site-wrapper{
+	background-color: #8996a6;
+	background-image: url("../img/ice-creams-2.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#slide2:checked ~ .site-wrapper .slide:nth-child(2){
+	display: block;
+}
+
+#slide2:checked ~ .site-wrapper label[for=slide2]{
+	background-color: #fff;
+}
+
+#slide3:checked ~ .site-wrapper{
+	background-color: #9d8b84;
+	background-image: url("../img/ice-creams-3.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#slide3:checked ~ .site-wrapper .slide:nth-child(3){
+	display: block;
+}
+
+#slide3:checked ~ .site-wrapper label[for=slide3]{
+	background-color: #fff;
+}
+
+
+
 
 //map
 .map-layer{
