@@ -67,6 +67,9 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 //GENERAL STYLES
 
 .wrap{
+	display: inline-block;
+	vertical-align: top;
+
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -92,6 +95,23 @@ input[type=password]{
 	&:focus{
 		border-color: #8fbdec;
 	}
+}
+
+input + label{
+	display: none;
+}
+
+input:focus + label{
+	display: inline-block;
+	vertical-align: top;
+
+	position: absolute;
+	top: -16px;
+	left: 12px;
+
+	font-size: 11px;
+	line-height: 13px;
+	color: #5b9ddf;
 }
 
 .btn{
@@ -138,23 +158,6 @@ input[type=password]{
 
 	display: flex;
 	padding-top: 23px;
-
-	input + label{
-		display: none;
-	}
-
-	input:focus + label{
-		display: inline-block;
-		vertical-align: top;
-
-		position: absolute;
-		top: -16px;
-		left: 12px;
-
-		font-size: 11px;
-		line-height: 13px;
-		color: #5b9ddf;
-	}
 }
 
 .logo{
@@ -229,11 +232,12 @@ input[type=password]{
 }
 
 .auxiliary-navigation{
-	display: none; //temporarily
+	display: none;
 
 	position: absolute;
 	top: 37px;
 	left: 0px;
+	z-index: 10;
 
 	&::after{
 		content: "";
@@ -310,6 +314,8 @@ input[type=password]{
 
 	&-block{
 		position: relative;
+
+		height: 36px;
 	}
 
 	&-button{
@@ -348,11 +354,12 @@ input[type=password]{
 	}
 
 	&-form{
-		display: none; //temporarily
+		display: none;
 
 		position: absolute;
 		top: 36px;
 		left: -310px;
+		z-index: 10;
 
 		box-sizing: border-box;
 		width: 342px;
@@ -376,6 +383,7 @@ input[type=password]{
 .user-block{
 	position: relative;
 
+	height: 36px;
 	margin-left: 10px;
 
 	.login-link{
@@ -428,7 +436,7 @@ input[type=password]{
 	}
 
 	.login-form{
-		display: none; //temporarily
+		display: none;
 		
 		position: absolute;
 		top: 36px;
@@ -544,6 +552,20 @@ input[type=password]{
 	}
 }
 
+//HEADER INTERACTIVE ELEMENTS
+
+.catalog:hover > .auxiliary-navigation{
+	display: block;
+}
+
+.search-block:hover > .search-form{
+	display: block;
+}
+
+.user-block:hover > .login-form{
+	display: block;
+}
+
 /**************************************************/
 
 /*  SLIDER  */
@@ -570,7 +592,7 @@ input[type=password]{
 			margin-right: 4px;
 
 			border: 2px solid #fff;
-			border-radius: 100%;
+			border-radius: 50%;
 
 			transition: background-color 0.75s;
 
@@ -682,7 +704,7 @@ input[type=password]{
 
 	&-block{
 		box-sizing: border-box;
-		flex-basis: 560px;
+		width: 560px;
 
 		padding-left: 20px;
 		padding-top: 15px;
@@ -738,19 +760,21 @@ input[type=password]{
 	&-raspberry{
 		background-color: #bb2e52;
 		background-image: url(../img/raspberry-bg.jpg);
-		background-repeat: no-repeat;
+
 	}
 
 	&-chocolate{
 		background-color: #432617;
 		background-image: url(../img/chocolate-bg.jpg);
-		background-repeat: no-repeat;
 
 		.promo-btn{
 			width: 189px;
 		}
 	}
 }
+
+/************************************************/
+/* ITEMS */
 
 .items{
 	display: flex;
@@ -760,13 +784,15 @@ input[type=password]{
 
 .item{
 	position: relative;
+	z-index: 5;
+	margin-bottom: 32px;
 
 	flex-basis: 285px;
 
 	color: #fff;
 	text-align: center;
 
-	border-radius: 5px;
+	border-radius: 6px;
 
 	transition: background 0.4s,
 							box-shadow 0.5s;
@@ -778,7 +804,7 @@ input[type=password]{
 
 	&-price{
 		position: absolute;
-		top: 208px;
+		top: 215px;
 		left: 8px;
 
 		text-shadow: 1px 1px 3px rgba(49, 50, 53, 0.5); 
@@ -809,7 +835,7 @@ input[type=password]{
 		text-decoration: none;
 		color: #fff;
 		
-		border-bottom: 1px solid rgba(255,255,255,0.3);
+		border-bottom: 1px solid rgba(255,255,255,0.4);
 
 		&:hover{
 			color: #ffe;
@@ -824,7 +850,7 @@ input[type=password]{
 	&-btn{
 		display: none;
 		position: absolute;
-		bottom: -60px;
+		bottom: -52px;
 		left: 45px;
 		z-index: 10;
 
@@ -838,8 +864,9 @@ input[type=password]{
 	}
 
 	&:hover{
+		z-index: 10;
 		background-color: rgba(255,255,255,0.3);
-		box-shadow: 0px 80px 0px 0px rgba(255, 255, 255, 0.3); 
+		box-shadow: 0px 75px 0px 0px rgba(255, 255, 255, 0.3); 
 	}
 
 	&:hover .item-link{
@@ -855,11 +882,10 @@ input[type=password]{
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 5;
+		z-index: 1;
 
 		width: 100%;
-		height: 400px;
-		background-color: transparent;
+		height: 405px;
 	}
 }
 
@@ -874,9 +900,200 @@ input[type=password]{
 
 	background-image: url("../img/hit.jpg");
 	background-repeat: no-repeat;
-	border-radius: 100%;
+	border-radius: 50%;
 }
 
+/************************************************/
+/* ABOUT BLOCK */
+
+.about{
+	margin-top: 6px;
+	margin-bottom: 40px;
+
+	padding-top: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	background-color: #eaddbe;
+	background-image: url("../img/waffle-bg.jpg");
+	border-radius: 15px;
+
+	&-title{
+		margin: 0;
+		margin-bottom: 20px;
+
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 500;
+		color: #323232;
+	}
+
+	&-offers{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.offer{
+			position: relative;
+
+			box-sizing: border-box;
+			width: 540px;
+
+			margin: 0;
+			margin-bottom: 23px;
+			padding-left: 56px;
+
+			font-size: 16px;
+			line-height: 22px;
+
+			&::after{
+				content: "";
+				position: absolute;
+				top: -12px;
+				left: 0;
+
+				width: 48px;
+				height: 49px;
+
+				background-image: url("../img/spritesheet.png");
+				background-repeat: no-repeat;
+
+				border-radius: 50%;
+			}
+		}
+
+		.offer-1::after{
+			background-position: 0 -202px;
+		}
+
+		.offer-2::after{
+			background-position: 0 -266px;
+		}
+
+		.offer-3::after{
+			background-position: 0 -330px;
+		}
+
+		.offer-4::after{
+			background-position: 0 -394px;
+		}
+	}
+}
+
+/********************************************/
+/* BLOG AND SUBSCRIPTION */
+
+.rest-info{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	margin-bottom: 40px;
+
+	.info-block{
+		box-sizing: border-box;
+		width: 560px;
+
+		background-color: #f9ece8;
+		border-radius: 15px;
+	}
+}
+
+.blog{
+	padding-top: 23px;
+	padding-left: 20px;
+	color: #323232;
+
+	background-image: url("../img/strawberry-bg.jpg");
+
+	&-title{
+		display: block;
+
+		margin-bottom: 5px;
+
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 500;
+	}
+
+	&-article{
+		display: inline-block;
+		vertical-align: top;
+
+		width: 290px;
+		margin-bottom: 80px;
+
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 700;
+		color: #323232;
+
+		&:hover{
+			text-decoration: none;
+		}
+
+		&:active{
+			color: rgba(0,0,0,0.5);
+		}
+	}
+}
+
+.subscription{
+	padding-left: 26px;
+
+	background-image: url("../img/postal-bg.jpg");
+
+	&-desc{
+		margin: 0;
+		margin-top: 34px;
+		margin-bottom: 34px;
+
+		width: 500px;
+
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 400;
+		color: #5a5a5a;
+	}
+
+	&-email{
+		width: 368px;
+		height: 44px;
+
+		border-radius: 10px;
+	}
+
+	&-btn{
+		width: 128px;
+		margin-left: 10px;
+
+		border-radius: 25px;
+	}
+
+	.wrap{
+		display: inline-block;
+		vertical-align: top;
+
+		width: 368px;
+	}
+
+	input + label{
+		display: none;
+	}
+
+	input:focus + label{
+		display: inline-block;
+		vertical-align: top;
+
+		position: absolute;
+		top: -16px;
+		left: 12px;
+
+		font-size: 11px;
+		line-height: 13px;
+		color: #5b9ddf;
+	}
+}
 
 //map
 .map-layer{
