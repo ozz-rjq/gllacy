@@ -95,6 +95,9 @@ input[type=password]{
 }
 
 .btn{
+	display: inline-block;
+	vertical-align: top;
+
 	box-sizing: border-box;
 	min-width: 100px;
 	min-height: 45px;
@@ -606,9 +609,6 @@ input[type=password]{
 	}
 
 	&-btn{
-		display: inline-block;
-		vertical-align: top;
-
 		width: 278px;
 		height: 64px;
 
@@ -671,7 +671,80 @@ input[type=password]{
 	background-color: #fff;
 }
 
+/*********************************************/
 
+
+/* PROMO BLOCK */
+
+.promo{
+	display: flex;
+
+	&-block{
+		box-sizing: border-box;
+		flex-basis: 560px;
+
+		padding-left: 20px;
+		padding-top: 15px;
+		padding-right: 20px;
+
+		background-color: #333;
+		border-radius: 15px;
+
+		&:nth-child(2n){
+			margin-left: auto; 
+		}
+	}
+
+	&-title{
+		display: inline-block;
+		vertical-align: top;
+
+		font-size: 35px;
+		line-height: 41px;
+		font-weight: 700;
+		color: #fff;
+
+		margin-bottom: 16px;
+	}
+
+	&-info{
+		margin: 0;
+		margin-bottom: 44px;
+
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 700;
+		color: #fff;
+	}
+
+	&-btn{
+		float: right;
+
+		width: 165px;
+		height: 46px;
+
+		padding-top: 10px;
+		margin-bottom: 23px;
+
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 700;
+
+		border-radius: 25px;
+	}
+
+	&-raspberry{
+		background-color: #bb2e52;
+		background-image: url(../img/raspberry-bg.jpg);
+		background-repeat: no-repeat;
+	}
+
+	&-chocolate{
+		background-color: #432617;
+		background-image: url(../img/chocolate-bg.jpg);
+		background-repeat: no-repeat;
+	}
+}
 
 
 //map
