@@ -46,19 +46,4 @@
 		}
 	});
 
-	
-
-	//header interactive
-
-	var catalogLink = document.querySelector("#catalog");
-	var auxNav = document.querySelector(".auxiliary-navigation");
-
-	auxNav.addEventListener("mouseover", function(event){
-		catalogLink.classList.add("catalog-hover");
-	});
-
-	auxNav.addEventListener("mouseout", function(event){
-		catalogLink.classList.remove("catalog-hover");
-	});
-
 }());
