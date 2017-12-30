@@ -21,7 +21,7 @@
 
 				<nav class="main-navigation">
 					<ul class="main-navigation-list">
-						<li class="main-navigation-item catalog"><a href="#">Каталог</a>
+						<li class="main-navigation-item catalog"><a href="#"  id="catalog">Каталог</a>
 							<nav class="auxiliary-navigation">
 								<ul class="auxiliary-navigation-list">
 									<li class="auxiliary-navigation-item special-link"><a href="#">Новинки</a></li>
@@ -273,7 +273,7 @@
 			</div>
 
 			<div class="wrap">
-				<input type="text" name="name" placeholder="Ваша почта для ответа?" class="modal-content-input" required>
+				<input type="text" name="name" placeholder="Ваша почта для ответа?" class="modal-content-input" id="" required>
 				<label>Ваша почта для ответа?</label>
 			</div>
 
@@ -283,11 +283,12 @@
 			</div>
 
 			<button type="submit" class="btn modal-content-submit">Отправить</button>
-
 		</form>
-		
-
 	</div>
+
+	<div class="modal-overlay"></div>
+
+	<script src="js/script.js"></script>
 
 </body>
 </html>
