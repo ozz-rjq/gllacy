@@ -21,11 +21,11 @@
 
 				<nav class="main-navigation">
 					<ul class="main-navigation-list">
-						<li class="main-navigation-item catalog"><a href="#" id="catalog">Каталог</a>
+						<li class="main-navigation-item catalog"><a href="catalog.html" id="catalog">Каталог</a>
 							<nav class="sub-navigation">
 								<ul class="sub-navigation-list">
 									<li class="sub-navigation-item special-link"><a href="#">Новинки</a></li>
-									<li class="sub-navigation-item"><a href="#">Сливочное</a></li>
+									<li class="sub-navigation-item"><a href="catalog.html">Сливочное</a></li>
 									<li class="sub-navigation-item"><a href="#">Щербеты</a></li> 
 									<li class="sub-navigation-item"><a href="#">Фруктовый лед</a></li>
 									<li class="sub-navigation-item"><a href="#">Мелорин</a></li>
@@ -43,10 +43,10 @@
 					</button>
 
 					<form class="search-form">
-						<div class="wrap">
-							<input type="text" name="search" class="search-input" placeholder="Что ищем?">
-							<label>Что ищем?</label>
-						</div>
+						<p class="wrap">
+							<input type="text" name="search" class="search-input" id="search" placeholder="Что ищем?">
+							<label for="search">Что ищем?</label>
+						</p>
 					</form>
 				</div>
 
@@ -54,15 +54,15 @@
 					<a href="#" class="login-link">Вход</a>
 
 					<form class="login-form">
-						<div class="wrap">
-							<input type="email" name="email" placeholder="Электронная почта" class="login-input">
-							<label>Электронная почта</label>
-						</div>
+						<p class="wrap">
+							<input type="email" name="email" class="login-input" id="login-email" placeholder="Электронная почта">
+							<label for="login-email">Электронная почта</label>
+						</p>
 						
-						<div class="wrap">
-							<input type="password" name="password" placeholder="Пароль" class="login-input">
-							<label>Пароль</label>
-						</div>
+						<p class="wrap">
+							<input type="password" name="password" class="login-input" id="login-password" placeholder="Пароль">
+							<label for="login-password">Пароль</label>
+						</p>
 
 						<div class="login-bottom">
 							<button type="submit" class="btn login-submit">Войти</button>
@@ -83,10 +83,8 @@
 					<b class="working-hours">С 10 до 20, ежедневно</b>
 					<b class="phone">8 812 450-25-25</b>
 				</div>
-			
 			</header>
 
-			
 			<section class="slider">
 				<div class="slide slide1">
 					<div class="slide-text">
@@ -200,10 +198,10 @@
 				<section class="info-block subscription">
 					<p class="subscription-desc">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
 					<form action="#" class="subscription-form">
-						<div class="wrap">
-							<input type="email" name="email" placeholder="Электронная почта" class="subscription-email" required>
-							<label>Электронная почта</label>
-						</div>
+						<p class="wrap">
+							<input type="email" name="email" placeholder="Электронная почта" class="subscription-email" id="subscription-email" required>
+							<label for="subscription-email">Электронная почта</label>
+						</p>
 						<button type="submit" class="btn subscription-btn">Отправить</button>
 					</form>
 				</section>
@@ -267,20 +265,20 @@
 		<h3 class="modal-content-title">Мы обязательно вам ответим!</h3>
 
 		<form action="#" method="post">
-			<div class="wrap">
+			<p class="wrap">
 				<input type="text" name="feedback-name" placeholder="Как вас зовут?" class="modal-content-input" id="feedback-name" required>
-				<label>Как вас зовут?</label>
-			</div>
+				<label for="feedback-name">Как вас зовут?</label>
+			</p>
 
-			<div class="wrap">
+			<p class="wrap">
 				<input type="email" name="feedback-email" placeholder="Ваша почта для ответа?" class="modal-content-input" id="feedback-email" required>
-				<label>Ваша почта для ответа?</label>
-			</div>
+				<label for="feedback-email">Ваша почта для ответа?</label>
+			</p>
 
-			<div class="wrap">
+			<p class="wrap">
 				<textarea name="feedback-text" id="feedback-text" cols="30" rows="10" placeholder="Напишите что-нибудь..." class="modal-content-textarea"></textarea>
-				<label>Напишите что-нибудь...</label>
-			</div>
+				<label for="feedback-text">Напишите что-нибудь...</label>
+			</p>
 
 			<button type="submit" class="btn modal-content-submit">Отправить</button>
 		</form>
