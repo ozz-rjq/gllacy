@@ -64,6 +64,13 @@ input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
 input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
 input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 
 textarea:focus::-webkit-input-placeholder { color:transparent; }
 textarea:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
@@ -71,6 +78,10 @@ textarea:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
 textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 //GENERAL STYLES
+
+.visually-hidden{
+	display: none;
+}
 
 .wrap{
 	display: inline-block;
@@ -85,7 +96,6 @@ textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 
 input[type=text],
-input[type=number],
 input[type=email],
 input[type=password]{
 	box-sizing: border-box;
@@ -110,12 +120,16 @@ input[type=password]{
 	}
 }
 
-input + label,
+input[type=text] + label,
+input[type=email] + label,
+input[type=password] + label,
 textarea + label{
 	display: none;
 }
 
-input:focus + label,
+input[type=text]:focus + label,
+input[type=email]:focus + label,
+input[type=password]:focus + label,
 textarea:focus + label{
 	display: inline-block;
 	vertical-align: top;
@@ -300,6 +314,17 @@ textarea:focus + label{
 
 			&:hover{
 				background-color: #fbded8;
+			}
+
+			&:active{
+				background-color: #f6b5a5;
+			}
+
+			&.active-page{
+				cursor: default;
+
+				background-color: #d07058;
+				color: #fff;
 			}
 		}
 
@@ -1556,6 +1581,365 @@ textarea:focus + label{
 	}
 }
 
+
+/*** BREADCRUMBS ***/
+
+.breadcrumbs{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li{
+		position: relative;
+
+		display: inline-block;
+		vertical-align: top;
+
+		margin-top: 20px;
+		margin-right: 18px;
+
+		&::after{
+			content: "\00BB";
+			position: absolute;
+			top: 0;
+			right: -15px;
+
+			color: #fff;
+		}
+
+		&:last-child{
+
+			&::after{
+				opacity: 0;
+			}
+		}
+	}
+
+	a{
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 400;
+		text-decoration: none;
+		color: #fff;
+
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+
+		&:hover{
+			color: #ffbc9e;
+			border-bottom-color: #ffbc9e;
+		}
+
+		&.active{
+			cursor: default;
+
+			&:hover{
+				color:  #fff;
+				border-bottom-color: rgba(255,255,255,0.4);
+			}
+		}
+	}
+}
+
+.catalog-title{
+	margin: 0;
+	margin-top: 4px;
+	margin-bottom: 26px;
+
+	font-size: 35px;
+	line-height: 41px;
+	font-weight: 700;
+	color: #fff;
+}
+
+
+/************************************************/
+/*** FORM ***/
+/************************************************/
+
+.form-block{
+	display: flex;
+
+	margin-bottom: 15px;
+
+	fieldset{
+		margin: 0;
+		padding: 0;
+		border: none;
+
+		margin-right: 15px;
+	}
+
+	legend,
+	.price-filter{
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #fff;
+
+		margin-bottom: 6px;
+		margin-left: 16px;
+	}
+}
+
+//// SELECT STYLIZATION
+
+.form-sort-type{
+	box-sizing: border-box;
+	width: 193px;
+	height: 36px;
+	padding-left: 12px;
+
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	text-transform: lowercase;
+	text-align: center;
+	color: #fff;
+
+	background-color: rgba(255,255,255,0.3);
+	border: none;
+	border-radius: 25px;
+
+	option{
+		cursor: pointer;
+
+		color: #000;
+	}
+
+	&:hover{
+		cursor: pointer;
+
+		color: #000;
+		background-color: #fff;
+	}
+}
+
+//// PRICE BLOCK
+
+.price-filter{
+	margin: 0;
+
+	input{
+		width: 24px;
+
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #fff;
+
+		border: none;
+		background-color: transparent;
+	}
+}
+
+.price-range{
+	position: relative;
+
+	box-sizing: border-box;
+	width: 218px;
+	height: 36px;
+
+	background-color: rgba(255,255,255,0.3);
+	border-radius: 25px;
+
+	.bar{
+		position: absolute;
+		top: 16px;
+		left: 15px;
+
+		width: 188px;
+		height: 4px;
+
+		background-color: rgba(255,255,255,0.4);
+
+		&-active{
+			position: absolute;
+			top: 0px;
+			left: 28px;
+			right: 60px;
+			z-index: 5;
+
+			height: 4px;
+
+			background-color: #fff;
+		}
+	}
+
+	.toggle{
+		position: absolute;
+		top: -8px;
+		z-index: 10;
+
+		width: 20px;
+		height: 20px;
+
+		border-radius: 50%;
+		background-color: #fff;
+
+		cursor: pointer;
+
+		&-min{
+			left: 19px;
+		}
+
+		&-max{
+			left: 117px;
+		}
+	}
+}
+
+.form-wrapper{
+	box-sizing: border-box;
+	height: 36px;
+	padding-top: 8px;
+
+	border-radius: 25px;
+	background-color: rgba(255,255,255,0.3);
+
+	input[type=radio],
+	input[type=checkbox]{
+		display: none;
+	}
+
+	label{
+		position: relative;
+
+		display: inline-block;
+		vertical-align: top;
+
+		margin-left: 16px;
+		padding-left: 30px;
+
+		font-size: 16px;
+		line-height: 21px;
+		font-weight: 500;
+		color: #fff;
+
+		&:hover{
+			cursor: pointer;
+		}
+
+		&:last-child{
+			margin-right: 16px;
+		}
+	}
+}
+
+//// RADIOBUTTONS
+
+.form-radio + label::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 18px;
+	height: 18px;
+
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+
+.form-radio:hover + label::after{
+	cursor: pointer;
+
+	width: 16px;
+	height: 16px;
+
+	border: 2px solid #fff;
+}
+
+.form-radio:checked + label::before{
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+
+	width: 10px;
+	height: 10px;
+
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+//// CHECKBOXES
+
+.form-checkbox + label{
+	padding-left: 33px;
+	margin-left: 17px;
+
+	line-height: 19px;
+
+	&:first-child{
+		margin-left: 16px;
+	}
+}
+
+.form-checkbox + label::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+
+	border: 1px solid #fff;
+	border-radius: 4px;
+}
+
+.form-checkbox:checked + label::after{
+	background-image: url("../img/spritesheet.png");
+	background-position: 0 -674px;
+	border: none;
+}
+
+.form-checkbox:hover + label::after{
+	border: 2px solid #fff;
+}
+
+.form-checkbox:checked:hover + label::after{
+	background-position: 0 -709px;
+	border: none;
+}
+
+
+//// BUTTON SUBMIT
+
+.form-btn{
+	box-sizing: border-box;
+	width: 144px;
+	height: 36px;
+
+	margin-top: 22px;
+
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #fff;
+
+	background-color: rgba(255,255,255,0.3);
+	border: 2px solid #fff;
+	border-radius: 25px;
+
+	&:hover{
+		cursor: pointer;
+
+		color: #323232;
+		background-color: #fff;
+	}
+
+	&:active{
+		box-shadow: inset 0px 2px 1px 0px rgba(136, 136, 136, 1);
+		background-color: #eaeaea;
+		border: none;
+	}
+}
+
+.form-bottom{
+	margin-bottom: 34px;
+}
 
 
 
