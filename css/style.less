@@ -21,6 +21,21 @@ body{
 							background-image 0.5s;
 }
 
+.site-wrapper::before,
+.site-wrpper::after{
+	content: "";
+
+	visibility: hidden;
+}
+
+.site-wrapper::before{
+	background-image: url("../img/ice-creams-2.png");
+}
+
+.site-wrapper::after{
+	background-image: url("../img/ice-creams-3.png");
+}
+
 .content-wrapper{
 	box-sizing: border-box;
 	width: 1200px;
@@ -70,6 +85,10 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 textarea:focus::-webkit-input-placeholder { color:transparent; }
