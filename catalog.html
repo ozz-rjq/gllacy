@@ -72,8 +72,30 @@
 						</form>
 					</div>
 
-					<div class="cart">
-						<a href="#" class="cart-link">Пусто</a>
+					<div class="cart cart-active">
+						<a href="#" class="cart-link">2 товара</a>
+
+						<div class="cart-popup">
+							<div class="cart-product">
+								<button type="button" class="cart-product-delete"></button>
+								<img src="img/R.png" alt="Product img">
+								<h3 class="cart-product-title">Пломбир с апельсиновым джемом</h3>
+								<b class="cart-product-weight">1,5 кг х 200 руб.</b>
+								<b class="cart-product-price">300 руб.</b>
+							</div>
+
+							<div class="cart-product">
+								<button type="button" class="cart-product-delete"></button>
+								<img src="img/R.png" alt="Product img">
+								<h3 class="cart-product-title">Клубничный пломбир с присыпкой 
+из белого шоколада</h3>
+								<b class="cart-product-weight">1,5 кг х 300 руб.</b>
+								<b class="cart-product-price">450 руб.</b>
+							</div>
+							
+							<b class="cart-summary">Итого</b>
+							<button class="btn cart-btn">Оформить заказ</button>
+						</div>
 					</div>
 
 					<div class="order-time">
@@ -97,6 +119,7 @@
 							<select name="form-sort-type" class="form-sort-type" id="form-sort-type">
 								<option value="rating-sort">По популярности</option>
 								<option value="price-sort">По цене</option>
+								<option value="fat-sort">По жирности</option>
 							</select>
 						</fieldset>
 

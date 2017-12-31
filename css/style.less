@@ -179,8 +179,7 @@ textarea:focus + label{
 }
 
 /**************************************************/
-
-/* HEADER */
+/****** HEADER ******/
 
 .main-header{
 	position: relative;
@@ -193,6 +192,8 @@ textarea:focus + label{
 	margin-top: -13px;
 	width: 160px;
 }
+
+// NAVIGATION
 
 .main-navigation{
 	position: relative;
@@ -358,6 +359,8 @@ textarea:focus + label{
 	background-color: @standart-bg;
 }
 
+// SEARCH BLOCK
+
 .search{
 
 	&-block{
@@ -435,6 +438,8 @@ textarea:focus + label{
 		background-position: 0 -32px;
 	}
 }
+
+// USER BLOCK
 
 .user-block{
 	position: relative;
@@ -553,7 +558,11 @@ textarea:focus + label{
 	}
 }
 
+// CART STYLES
+
 .cart{
+	position: relative;
+
 	margin-left: 10px;
 
 	&-link{
@@ -567,10 +576,11 @@ textarea:focus + label{
 		color: #fff;
 		text-decoration: none;
 
+		box-sizing: border-box;
+		width: 118px;
 		padding-top: 8px;
 		padding-left: 45px;
 		padding-bottom: 8px;
-		padding-right: 34px;
 
 		background-color: #a1b5aa;
 		border-radius: 40px;
@@ -590,6 +600,35 @@ textarea:focus + label{
 			background-repeat: no-repeat;
 			background-position: 0 -132px;
 		}
+	}
+
+	&-active{
+
+		.cart-link{
+			color: #323232;
+			background-color: #f7f6f3;
+
+			&::after{
+				background-position: 0 -166px;
+			}
+		}
+	}
+
+	&-popup{
+		position: absolute;
+		top: 36px;
+		left: -422px;
+		z-index: 10;
+
+		display: none;
+
+		box-sizing: border-box;
+		width: 540px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		background-color: #f8f7f4;
+		border-radius: 5px;
 	}
 }
 
@@ -628,6 +667,10 @@ textarea:focus + label{
 }
 
 .user-block:hover > .login-form{
+	display: block;
+}
+
+.cart:hover .cart-popup{
 	display: block;
 }
 
@@ -759,8 +802,6 @@ textarea:focus + label{
 }
 
 /*********************************************/
-
-
 /* PROMO BLOCK */
 
 .promo{
@@ -1637,6 +1678,10 @@ textarea:focus + label{
 				border-bottom-color: rgba(255,255,255,0.4);
 			}
 		}
+
+		&:last-child{
+			border-bottom: none;
+		}
 	}
 }
 
@@ -2032,7 +2077,6 @@ textarea:focus + label{
 	}
 }
 
-
 //LINE BEFORE FOOTER
 
 .line{
@@ -2044,6 +2088,8 @@ textarea:focus + label{
 	background-color: rgba(255,255,255,0.4);
 }
 
+//// SOME INNER PAGE PREFERENCES
+
 .inner-page .footer-social-list{
 	margin-top: 29px;
 }
@@ -2051,3 +2097,14 @@ textarea:focus + label{
 .inner-page .footer-info{
 	margin-top: 25px;
 }
+
+.inner-page .modal-content{
+	display: block;
+	position: static;
+
+	margin: 0 auto;
+}
+
+/*********************************************************/
+/*********************************************************/
+/*********************************************************/
