@@ -1,4 +1,4 @@
-function initMap(){
+window.onload = function () {
 	var element = document.querySelector("#map");
 
 	var options = {
@@ -24,4 +24,4 @@ function initMap(){
 	marker.addListener("click", function(){
 		infoWindow.open(myMap, marker);
 	});
-};
+}
