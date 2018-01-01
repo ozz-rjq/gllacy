@@ -581,6 +581,10 @@ textarea:focus + label{
 		}
 	}
 
+	.additional-links{
+		width: 141px;
+	}
+
 	.login-input{
 		box-sizing: border-box;
 		width: 241px;
@@ -901,7 +905,6 @@ textarea:focus + label{
   margin-left: auto; 
   margin-right: auto; 
 
-	
 	text-align: center;
 
 	&-text{
@@ -981,29 +984,27 @@ textarea:focus + label{
 	background-color: #fff;
 }
 
-#slide1:checked ~ .site-wrapper .slide-text,
-#slide2:checked ~ .site-wrapper .slide-text,
-#slide3:checked ~ .site-wrapper .slide-text{
-	animation: bounce-t 1s;
-}
-
 #slide1:checked ~ .site-wrapper .slide-btn,
 #slide2:checked ~ .site-wrapper .slide-btn,
 #slide3:checked ~ .site-wrapper .slide-btn{
-	animation: bounce-b 1s;
+	animation: hip 0.5s;
 }
 
-@keyframes bounce-t{
-	0% {transform: translateY(2000px);}
-	70% {transform: translateY(-30px);}
-	90% {transform: translateY(20px);}
-	100% {transform: translateY(-5px);}
+#slide1:checked ~ .site-wrapper .slide-text,
+#slide2:checked ~ .site-wrapper .slide-text,
+#slide3:checked ~ .site-wrapper .slide-text{
+	animation: hop 0.75s;
 }
-@keyframes bounce-b{
-	0% {transform: translateY(-2000px);}
-	70% {transform: translateY(30px);}
-	90% {transform: translateY(-20px);}
-	100% {transform: translateY(5px);}
+
+@keyframes hip{
+	0% {opacity: 0; transform: translateY(50px);}
+	60% {opacity: 0.1; transform: translateY(25px);}
+	100% {opacity: 1;}
+}
+@keyframes hop{
+	0% {opacity: 0; transform: scale(0.5);}
+	50% {opacity: 0.5; transform: scale(1.25);}
+	100% {transform: scale(1);}
 }
 
 /*********************************************/
