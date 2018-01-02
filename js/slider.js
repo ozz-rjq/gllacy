@@ -15,7 +15,7 @@
 	var slide3 = document.querySelector(".slide.slide3");
 
 	var currentSlide;
-	var mainIntervalID = window.setInterval(nextSlide, 5000);
+	var mainIntervalID = window.setInterval(nextSlide, 10000);
 
 	//right arrow listener
 	window.addEventListener("keydown", function(event){
