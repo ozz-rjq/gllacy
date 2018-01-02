@@ -865,7 +865,7 @@ textarea:focus + label{
 	position: relative;
 
 	box-sizing: border-box;
-	height: 570px;
+	min-height: 570px;
 	padding-top: 316px;
 
 	&-controls{
@@ -923,6 +923,7 @@ textarea:focus + label{
 	&-btn{
 		width: 278px;
 		height: 64px;
+		margin-bottom: 40px;
 
 		font-size: 32px;
 		line-height: 64px;
@@ -1234,24 +1235,24 @@ textarea:focus + label{
 
 // items animation
 
-@keyframes item-even{
-	0%{transform: translateX(-250px) translateY(-50px);}
+@keyframes item-top{
+	0%{transform: translateX(-10px) translateY(40px);}
 }
 
-@keyframes item-odd{
-	0%{transform: translateX(250px) translateY(-50px);}
+@keyframes item-bottom{
+	0%{transform: translateX(10px) translateY(-40px);}
 }
 
 .item-1, .item-3,
 .item-5, .item-7,
 .item-9, .item-11{
-	animation: item-even 0.8s;
+	animation: item-top 0.8s;
 }
 
 .item-2, .item-4,
 .item-6, .item-8,
 .item-10, .item-12{
-	animation: item-odd 0.8s;
+	animation: item-bottom 0.8s;
 }
 
 
